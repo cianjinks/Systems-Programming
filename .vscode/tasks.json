@@ -1,0 +1,58 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: g++ fast build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-std=c++17",
+				"-Wshadow",
+				"-Wall",
+				"-O2",
+				"-Wno-unused-result",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "C/C++: g++ slow build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-std=c++17",
+				"-Wshadow",
+				"-Wall",
+				"-fsanitize=address",
+				"-fsanitize=address",
+				"-D_GLIBCXX_DEBUG",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
