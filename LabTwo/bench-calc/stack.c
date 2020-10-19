@@ -22,5 +22,5 @@ double double_stack_pop(struct double_stack* this)
 {
     assert(this->top > 0);
     this->top--;
-    return this->items[this->top + 1];
+    return this->items[this->top];
 }

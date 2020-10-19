@@ -24,12 +24,12 @@ int main(int argc, char ** argv) {
     if ( strcmp(argv[1], "postfix") == 0 ) {
       // pass the command line parameters, but with the first two removed
       result = evaluate_postfix_expression(argv+2, argc-2);
-      printf("Result is %lf\n", result);
+      printf("\nResult is %lf\n", result);
     }
     else if ( strcmp(argv[1], "infix") == 0 ) {
       // pass the command line parameters, but with the first two removed
       result = evaluate_infix_expression(argv+2, argc-2);
-      printf("Result is %lf\n", result);
+      printf("\nResult is %lf\n", result);
     }
     else {
       printf("Error: You must specify whether the expression is infix or postfix\n");
