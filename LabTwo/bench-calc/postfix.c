@@ -22,46 +22,37 @@ double evaluate_postfix_expression(char ** args, int nargs) {
     // Check which symbol it is otherwise
     else
     {
+      double firstElement = double_stack_pop(stack);
+      double secondElement = double_stack_pop(stack);
       switch(args[i][0])
       {
         case '+':
         {
-          double firstElement = double_stack_pop(stack);
-          double secondElement = double_stack_pop(stack);
-          double result = firstElement + secondElement;
+          double result = secondElement + firstElement;
           double_stack_push(stack, result);
           break;
         }
         case '-':
         {
-          double firstElement = double_stack_pop(stack);
-          double secondElement = double_stack_pop(stack);
-          double result = firstElement - secondElement;
+          double result = secondElement - firstElement;
           double_stack_push(stack, result);
           break;
         }
         case 'X':
         {
-          double firstElement = double_stack_pop(stack);
-          double secondElement = double_stack_pop(stack);
-          double result = firstElement * secondElement;
+          double result = secondElement * firstElement;
           double_stack_push(stack, result);
           break;
         }
         case '/':
         {
-          double firstElement = double_stack_pop(stack);
-          double secondElement = double_stack_pop(stack);
-          double result = firstElement / secondElement;
+          double result = secondElement / firstElement;
           double_stack_push(stack, result);
           break;
         }
         case '^':
         {
-          double firstElement = double_stack_pop(stack);
-          double secondElement = double_stack_pop(stack);
-          // May be wrong due to order pushed
-          double result = pow(firstElement, secondElement);
+          double result = pow(secondElement, firstElement);
           double_stack_push(stack, result);
           break;
         }
