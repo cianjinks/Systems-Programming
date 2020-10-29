@@ -11,4 +11,10 @@
 
 double evaluate_infix_expression(char ** expr, int nterms);
 
+int is_number(const char* string);
+
+int is_operator(const char* string);
+
+int is_higher_precendence(char firstValue, char secondValue);
+
 #endif
