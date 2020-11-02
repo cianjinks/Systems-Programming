@@ -1,1 +1,1 @@
-Result is 4.000000
+Result is -1.000000
