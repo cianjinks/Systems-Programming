@@ -4,6 +4,7 @@
 #define BITSET_H
 
 #include <stdint.h>
+#include <stdlib.h>
 
 struct bitset {
   uint64_t * bits;    // array where the 0/1 bits are stored
