@@ -119,7 +119,6 @@ void listset_intersect(struct listset * dest, struct listset * src1,
     }
     copysrc1 = copysrc1->next;
   }
-
 }
 
 // return the number of items in the listset
