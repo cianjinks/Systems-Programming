@@ -99,8 +99,12 @@ void listset_union(struct listset * dest, struct listset * src1,
   }
   while(copysrc2 != NULL)
   {
-    output = copysrc2;
-    output = output->next;
+    // If src1 does not contain the element
+    if(!listset_lookup(src1, copysrc2->str))
+    {
+      output = copysrc2;
+      output = output->next;
+    }
     copysrc2 = copysrc2->next;
   }
 }
@@ -138,7 +142,7 @@ void listset_print(struct listset * this) {
   struct listnode * p;
 
   for ( p = this->head; p != NULL; p = p->next ) {
-    printf("%s ", p->str);
+    printf("%s, ", p->str);
   }
   printf("\n");
 }
